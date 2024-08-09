@@ -7,11 +7,14 @@ public class Validador {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
 
+        System.out.println("=================================================== <[Entrada]> ==================================================");
         System.out.print("Intoduzca un numero: ");
         String num = scan.next();
 
         if (!num.matches("\\d+")) {
-            System.out.println("El número ingresado no es válido.");
+            System.out.println("=================================================== <[Error]> ====================================================");
+            System.err.println("Error, solo se admiten numeros");
+            System.out.println("==================================================================================================================");
             return;
         }
 
@@ -32,10 +35,12 @@ public class Validador {
             sumaTotal += digito;
         }
 
+        System.out.println("=================================================== <[Validacion]> ===============================================");
         if (sumaTotal % 10 == 0) {
             System.out.println("El número " + num + " es una tarjeta válida.");
         } else {
             System.out.println("El número " + num + " no es una tarjeta válida.");
         }
+            System.out.println("==================================================================================================================");
     }
 }
